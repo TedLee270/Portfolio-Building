@@ -21,6 +21,7 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Projects</a></li>
+                    <li><a href="#">Career Summary</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
@@ -38,14 +39,80 @@
         <div class="container">
             <div class="row">
                 <div class="about-col-1">
-                    <img src="Images/">
+                    <img src="Images/aboutme.png">
                 </div>
                 <div class="about-col-2">
                     <h1 class="subtitle">About Me</h1>
+                    <p>Greetings! I’m Yunseong — a recent Computer Science graduate from the University of Texas at San
+                        Antonio, CompTIA Security+ certified, and aspiring IT professional with a passion for
+                        cybersecurity. My career goal is to become a penetration tester or red teamer, helping
+                        organizations strengthen their security by thinking like an attacker.<br><br>
+                        Born in Seoul, South Korea, I’ve lived in various states across the U.S., which taught me
+                        adaptability early on. I didn’t originally plan to study computer science, but after switching
+                        majors and colleges last minute, I discovered my passion for technology — a passion that only
+                        grew through countless late nights of coding, debugging, and learning how systems work from the
+                        inside out.<br><br>
+                        Balancing life as a husband and father to two young boys while completing my degree challenged
+                        me to master time management, organization, and resilience. Outside of work and study, I enjoy
+                        spending time with my family, exploring new tools, and building hands-on projects to sharpen my
+                        technical skills.<br><br>
+                        I’m excited to continue my journey in IT and cybersecurity, embracing each challenge as an
+                        opportunity to grow and become a valuable asset to the community!<br><br>
+                        Thank you for taking the time to visit my website and I hope that you found them informative.
+                        If you’d like to collaborate, share ideas, or connect, I’d be happy to hear from you!
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web Development</span><br>Designing Websites</li>
+                            <li><span>Filler</span><br>Filler</li>
+                            <li><span>Filler</span><br>Filler</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024 - Current</span><br>Armed Security Officer at Allied Universal</li>
+                            <li><span>2021 - 2025</span><br>Full time student at UTSA</li>
+                            <li><span>2019 - Current</span><br>U.S. Army Reserves</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2025</span><br>BS from the University of Texas at San Antonio</li>
+                            <li><span>2025</span><br>CompTIA Security+</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="projects">
+
+    </div>
+
+    <div id="career-summary">
+
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
 
 </body>
 
