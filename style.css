@@ -187,3 +187,148 @@ nav ul li a:hover::after {
 .tab-contents.active-tab {
     display: block;
 }
+
+/* ----- Services/Projects Section ----- */
+
+/* 30 pixels from top and bottom and 0 from left to right */
+#services {
+    padding: 30px 0;
+}
+
+/* Separating the list into individual grids */
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+/* Creating a gray background on each grid */
+.services-list div {
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+/* Increasing the font size of the icons */
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+/* Change font size and weight of the title and add some padding to the bottom */
+.services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Change the style of the links */
+.services-list div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* Background turns red and moves up whenever it hovers */
+.services-list div:hover {
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+
+/* ----- Portfolio Section ----- */
+
+/* Padding 50 pixels on the top and bottom and 0 on the left and right */
+#portfolio {
+    padding: 50px 0; 
+}
+
+/* Putting images into grid */
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+/* Rounding out the corners */
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Filling up the grid with the images */
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+/* Creating a red color gradient onto the images along with the text */
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+/* Adding some space between title and description */
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Created a white circle background with the red icon */
+.layer a {
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/* Image slightly zooms in when hovering */
+.work:hover img {
+    transform: scale(1.1);
+}
+
+/* Displays content once hovered over */
+.work:hover .layer {
+    height: 100%;
+}
+
+/* Adding a "see more" button adding padding and rounding out the corners */
+.btn {
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+}
