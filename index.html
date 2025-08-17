@@ -18,13 +18,15 @@
         <div class="container">
             <nav>
                 <img src="Images/" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Career Summary</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Projects</a></li>
+                    <li><a href="#portfolio">Career Summary</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <h1>Yunseong Lee</h1>
@@ -153,9 +155,42 @@
         </div>
     </div>
 
+    <!----- Contact Section ----->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> yunseonglee15@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 517-899-9748</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/TedLee270"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/yunseonglee"><i
+                                class="fa-brands fa-square-linkedin"></i></a>
+                    </div>
+                    <a href="Documents/Yunseong Lee Aug 2025 Resume.pdf" download class="btn btn2">Download Resume</a>
+                    <a href="Documents/" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright <i class="fa-regular fa-copyright"></i> Yunseong Lee. </p>
+        </div>
+    </div>
+
     <script>
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
+
         function opentab(tabname) {
             for (tablink of tablinks) {
                 tablink.classList.remove("active-link");
@@ -166,6 +201,29 @@
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzHcHAjJ0UkdvhEEicVU7DCDeh44-CRlb2m1Pv-E-xdzga8QQ3holyX6t0h7YR45KiD/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
     </script>
 
 </body>
