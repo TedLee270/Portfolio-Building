@@ -521,3 +521,10 @@ nav .fa-solid {
         font-size: 14px;
     }
 }
+
+/* Successful message display */
+#msg {
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+}
